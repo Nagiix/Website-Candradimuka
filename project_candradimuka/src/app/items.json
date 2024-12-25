@@ -1,0 +1,13 @@
+{
+"items": {
+    "bootstrap": [
+    {
+        "id": 1,
+        "title": "Photography",
+        "body": "Bootstrap Carousel Example",
+        "imageUrl": "/res_img/Icons/arrow_down.png",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    }
+    ]
+}
+}
