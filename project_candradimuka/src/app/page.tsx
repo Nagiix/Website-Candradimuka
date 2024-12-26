@@ -1,9 +1,7 @@
 'use client'
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
-// import { items } from "./items.json";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { Carousel } from "react-bootstrap";
+import PageCarousel from "./scripts/carousel-1";
 
 export default function Home() {
   // OnClick scroll to section
@@ -12,12 +10,53 @@ export default function Home() {
   const sectionZeroRef = useRef<HTMLDivElement>(null); 
   const textRef_Characters = useRef<HTMLDivElement>(null); 
   
-  // // Carousel
-  // const { bootstrap } = items;
-  // const [index, setIndex] = useState(0);
-  // const handleSelect = (selectedIndex , e) => {
-  //   setIndex(selectedIndex);
-  // };
+  const pages = [
+    <div
+      key="page1"
+      style={{
+        background: '#000000',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <h3>Page 1 Content</h3>
+      <p>This is the first page of the carousel.</p>
+    </div>,
+    <div
+      key="page2"
+      style={{
+        background: '#0f0f0f',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <h3>Page 2 Content</h3>
+      <p>This is the second page of the carousel.</p>
+    </div>,
+    <div
+      key="page3"
+      style={{
+        background: '#0a0a0a',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <h3>Page 3 Content</h3>
+      <p>This is the third page of the carousel.</p>
+    </div>,
+  ];
 
   // Scroll to Section one
   const scrollToSectionOne = () => {
@@ -177,23 +216,14 @@ export default function Home() {
           />
         </div>
 
-        {/* section 2
+        {/* section 2 */}
         <div className="section2">
           <div className="s2_contents">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-              {bootstrap.map((item) => (
-                <Carousel.Item key={item.id} className="styles.itemP" interval={4000}>
-                  <Image src={item.imageUrl} alt="slides" width={100} height={100}/>
-                  <Carousel.Caption className="styles.caption">
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                    <button className="btn btn-danger">Visit Docs</button>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              ))}
-            </Carousel>
+            <div className="Carousel-1">
+              <PageCarousel pages={pages} />
+            </div>
           </div>
-        </div> */}
+        </div>
 
         {/* Scrollable website */}
         <div className="extra-content">

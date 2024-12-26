@@ -46,7 +46,7 @@ body {
 .title{
   position:fixed;
   z-index: 99999;
-  top:-25;
+  top:-10;
   left:0;
   font-family: "Island Moments", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 100;
@@ -70,7 +70,7 @@ body {
 .navbar_links{
   z-index:99999;
   width:35%;
-  height:100%;
+  height:fit-content;
   position: fixed;
   display: flex;
   position: fixed;
@@ -85,9 +85,9 @@ body {
 }
 
 .navbar_socials{
-  z-index:999999;
+  z-index:9999;
   width:12%;
-  height:100%;
+  height:fit-content;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -96,6 +96,7 @@ body {
   padding: 25px 20px;
   list-style-type: none;
   isolation: isolate;
+  
 }
 
 .bibi-youtube{
@@ -232,13 +233,19 @@ body {
   animation: upDown 1.5s ease-in-out infinite;
 }
 
-/* section 2
+/* section 2 */
 .section2{
   position: absolute;
   left:0;
   background-color: #000000;
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   z-index: 10;
   top: 250%;
-} */
+}
+
+.Carousel-1{
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}

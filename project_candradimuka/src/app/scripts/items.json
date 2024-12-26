@@ -1,0 +1,20 @@
+{
+"items": {
+    "bootstrap": [
+    {
+        "id": 1,
+        "title": "WHITE",
+        "body": "Bootstrap Carousel Example",
+        "imageUrl": "/res_img/WHITE.jpg",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    },
+    {
+        "id": 2,
+        "title": "BLACK",
+        "body": "Bootstrap Carousel Example",
+        "imageUrl": "/res_img/BLACK.jpg",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+    }
+    ]
+}
+}
