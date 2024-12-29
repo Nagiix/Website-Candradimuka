@@ -366,3 +366,10 @@ body {
   margin-left: 56.7%;
   position: absolute;
 }
+
+.Copyright{
+  position: absolute;
+  font-family: "Inria Serif";
+  font-size: 15;
+  left:1.5%;
+}

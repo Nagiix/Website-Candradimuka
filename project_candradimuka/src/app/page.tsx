@@ -326,6 +326,7 @@ export default function Home() {
           <h1 className="playnow">
             Play Now!
           </h1>
+          <p className="Copyright">Copyright © 2024 — Dimas Nauli Satria Addin Sinaga - 2401010179. All Rights Reserved</p>
 
         </div>
         {/* Scrollable website */}
