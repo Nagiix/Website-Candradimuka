@@ -304,6 +304,30 @@ export default function Home() {
           <WorldCarousel/>
         </div>
 
+        <div className="section6 position-absolute">
+          <h1 className="mb-[-10%] ml-[18%]">
+            Forward, Sang Punakawan.
+          </h1>
+          <img
+            className="ml-[2%] mt-[6%] position-absolute w-[1790]"
+            src="/res_img/Icons/outline_single-pg1.png"
+          />
+        </div>
+
+        <div className="Footer position-absolute">
+          <img
+            className="imgfooter_steam"
+            src="/res_img/Icons/steam.png"
+          />
+          <img
+            className="imgfooter_itch"
+            src="/res_img/Icons/itch.png"
+          />
+          <h1 className="playnow">
+            Play Now!
+          </h1>
+
+        </div>
         {/* Scrollable website */}
         <div className="extra-content">
           <p>This is additional content that makes the page scrollable.</p>
