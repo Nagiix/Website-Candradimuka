@@ -373,3 +373,42 @@ body {
   font-size: 15;
   left:1.5%;
 }
+
+
+/* WIP SECTION */
+.FooterWIP{
+  left:0;
+  top:100vh;
+  z-index: 10;
+  height: 50vh;
+  width: 100vw;
+  font-family: "Island Moments";
+  font-size: 150;
+  color: #000000;
+  -webkit-text-stroke: 2px #000000;  
+  padding:0;
+}
+
+.playnowwip{
+  margin-left: 38%;
+  margin-top:15%;
+}
+
+.imgfooter_steamwip{
+  margin-top: 8%;
+  margin-left: 27%;
+  position: absolute;
+}
+
+.imgfooter_itchwip{
+  margin-top: 9.5%;
+  margin-left: 56.7%;
+  position: absolute;
+}
+
+.Copyrightwip{
+  position: absolute;
+  font-family: "Inria Serif";
+  font-size: 15;
+  left:1.5%;
+}

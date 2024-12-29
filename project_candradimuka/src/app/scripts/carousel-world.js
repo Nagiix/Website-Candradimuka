@@ -38,7 +38,7 @@ const WorldCarousel = () => {
         // Bale Sigala gala
     <div key="1" className="flex items-center w-full h-full">
       <img
-        src="res_img/World/Gunungan.png"
+        src="/res_img/World/Gunungan.png"
         alt="Semar"
         className="w-[40%] h-[50%] object-contain quality-[100] ml-[6%] mb-[25%]"
         />
@@ -88,7 +88,7 @@ const WorldCarousel = () => {
 // Pandawa
   <div key="2" className="flex items-center w-full h-full">
     <img
-      src="res_img/World/Pandawa.png"
+      src="/res_img/World/Pandawa.png"
       alt="Semar"
       className="w-[40%] h-[50%] object-contain quality-[100] ml-[3%] mb-[17.5%]"
       />
@@ -137,7 +137,7 @@ A powerful group of 5 that is consisted of good hearted and powerful demi-gods.<
 // Punakawan
   <div key="2" className="flex items-center w-full h-full">
     <img
-      src="res_img/World/Punakawan.png"
+      src="/res_img/World/Punakawan.png"
       alt="Semar"
       className="w-[40%] h-[50%] object-contain quality-[100] ml-[3%] mb-[24.5%]"
       />
@@ -187,7 +187,7 @@ A powerful group of 5 that is consisted of good hearted and powerful demi-gods.<
 // Kurawa
   <div key="2" className="flex items-center w-full h-full">
     <img
-      src="res_img/World/Sengkuni.png"
+      src="/res_img/World/Sengkuni.png"
       alt="Semar"
       className="w-[40%] h-[50%] object-contain quality-[100] ml-[3%] mb-[14.3%]"
       />
@@ -239,8 +239,8 @@ A faction of 100 siblings that always plot and seek destruction towards the peop
     <Carousel 
       activeIndex={index} 
       onSelect={handleSelect}
-      prevIcon={<img src="res_img/Icons/arrow_left.png" alt="Previous" />}
-      nextIcon={<img src="res_img/Icons/arrow_right.png" alt="Next" />}
+      prevIcon={<img src="/res_img/Icons/arrow_left.png" alt="Previous" />}
+      nextIcon={<img src="/res_img/Icons/arrow_right.png" alt="Next" />}
       interval={null}
       >
       {pages.map((page, idx) => (

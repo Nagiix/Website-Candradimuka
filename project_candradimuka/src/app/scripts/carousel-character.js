@@ -12,7 +12,7 @@ const CharacterCarousel = () => {
     // GROUP
     <div key="0" className="flex items-center justify-center w-full h-full">
       <img
-        src="res_img/Characters/Group.png"
+        src="/res_img/Characters/Group.png"
         alt="Group"
         className="w-[100vw] h-[30%] object-contain quality-[100]"
       />
@@ -43,7 +43,7 @@ const CharacterCarousel = () => {
         // SEMAR
     <div key="1" className="flex items-center w-full h-full">
       <img
-        src="res_img/Characters/Semar.png"
+        src="/res_img/Characters/Semar.png"
         alt="Semar"
         className="w-[30%] h-[45%] object-contain quality-[100] ml-[6%] mb-[30%]"
         />
@@ -114,7 +114,7 @@ const CharacterCarousel = () => {
           // GARENG
     <div key="2" className="flex items-center w-full h-full">
       <img
-        src="res_img/Characters/Gareng.png"
+        src="/res_img/Characters/Gareng.png"
         alt="Semar"
         className="w-[30%] h-[45%] object-contain quality-[100] ml-[6%] mb-[30%]"
         />
@@ -185,7 +185,7 @@ const CharacterCarousel = () => {
       // PETRUK
     <div key="3" className="flex items-center w-full h-full">
       <img
-        src="res_img/Characters/Petruk.png"
+        src="/res_img/Characters/Petruk.png"
         alt="Semar"
         className="w-[30%] h-[45%] object-contain quality-[100] ml-[6%] mb-[28%]"
         />
@@ -258,7 +258,7 @@ const CharacterCarousel = () => {
     // Bagong
     <div key="4" className="flex items-center w-full h-full">
        <img
-        src="res_img/Characters/Bagong.png"
+        src="/res_img/Characters/Bagong.png"
         alt="Semar"
         className="w-[30%] h-[45%] object-contain quality-[100] ml-[6%] mb-[28%]"
         />
@@ -333,8 +333,8 @@ const CharacterCarousel = () => {
     <Carousel 
       activeIndex={index} 
       onSelect={handleSelect}
-      prevIcon={<img src="res_img/Icons/arrow_left.png" alt="Previous" />}
-      nextIcon={<img src="res_img/Icons/arrow_right.png" alt="Next" />}
+      prevIcon={<img src="/res_img/Icons/arrow_left.png" alt="Previous" />}
+      nextIcon={<img src="/res_img/Icons/arrow_right.png" alt="Next" />}
       interval={null}
       >
       {pages.map((page, idx) => (

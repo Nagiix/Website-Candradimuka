@@ -119,8 +119,8 @@ const MechanicCarousel = () => {
     <Carousel 
       activeIndex={index} 
       onSelect={handleSelect}
-      prevIcon={<img src="res_img/Icons/arrow_left.png" alt="Previous" />}
-      nextIcon={<img src="res_img/Icons/arrow_right.png" alt="Next" />}
+      prevIcon={<img src="/res_img/Icons/arrow_left.png" alt="Previous" />}
+      nextIcon={<img src="/res_img/Icons/arrow_right.png" alt="Next" />}
       interval={null}
       >
       {pages.map((page, idx) => (
