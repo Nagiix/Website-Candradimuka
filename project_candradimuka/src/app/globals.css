@@ -310,3 +310,16 @@ body {
   position:absolute;
   margin-top:25.7%;
 }
+
+/* section 5 */
+.section5{
+  left:0;
+  top:535vh;
+  z-index: 10;
+  height: 160vh;
+  width: 100vw;
+}
+.SECTION5ANCHOR{
+  position:absolute;
+  margin-top:25.7%;
+}

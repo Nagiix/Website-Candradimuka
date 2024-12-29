@@ -88,10 +88,10 @@ const StoryCarousel = () => {
       onSelect={handleSelect}
       prevIcon={<img src="res_img/Icons/arrow_left.png" alt="Previous" />}
       nextIcon={<img src="res_img/Icons/arrow_right.png" alt="Next" />}
-      interval={50000}
+      interval={null}
       >
       {pages.map((page, idx) => (
-        <Carousel.Item key={idx} interval={null}>
+        <Carousel.Item key={idx}>
           <div
             className="d-flex justify-content-center align-items-center"
             style={{ height: '154vh', width: "100vw"}}

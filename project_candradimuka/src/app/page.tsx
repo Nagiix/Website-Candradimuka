@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import CharacterCarousel from "./scripts/carousel-character";
 import MechanicCarousel from "./scripts/carousel-mechanic";
 import StoryCarousel from "./scripts/carousel-story";
+import WorldCarousel from "./scripts/carousel-world";
 
 export default function Home() {
   const [isInViewSectionZero, setIsInViewSectionZero] = useState(false);
@@ -11,7 +12,7 @@ export default function Home() {
   const [isInViewSectionTwo, setIsInViewSectionTwo] = useState(false);
   const [isInViewSectionThree, setIsInViewSectionThree] = useState(false);
   const [isInViewSectionFour, setIsInViewSectionFour] = useState(false);
-
+  const [isInViewSectionFive, setIsInViewSectionFive] = useState(false);
 
   // Create refs for each section
   const sectionZeroRef = useRef<HTMLDivElement>(null);
@@ -19,6 +20,7 @@ export default function Home() {
   const sectionTwoRef = useRef<HTMLDivElement>(null);
   const sectionThreeRef = useRef<HTMLDivElement>(null);
   const sectionFourRef = useRef<HTMLDivElement>(null);
+  const sectionFiveRef = useRef<HTMLDivElement>(null);
 
   // Scroll to Section One
   const scrollToSectionOne = () => {
@@ -27,23 +29,30 @@ export default function Home() {
       block: "center",
     });
   };
-  
+  // Scroll to Section Two
   const scrollToSectionTwo = () => {
     sectionTwoRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
   };
-  
+  // Scroll to Section Three
   const scrollToSectionThree = () => {
     sectionThreeRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
   };
-
+  // Scroll to Section Four
   const scrollToSectionFour = () => {
     sectionFourRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+  // Scroll to Section Five
+  const scrollToSectionFive = () => {
+    sectionFiveRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
@@ -68,6 +77,8 @@ export default function Home() {
           setIsInViewSectionThree(entry.isIntersecting);
         } else if (entry.target === sectionFourRef.current) {
           setIsInViewSectionFour(entry.isIntersecting);
+        } else if (entry.target === sectionFiveRef.current) {
+          setIsInViewSectionFive(entry.isIntersecting);
         }
       },
       observerOptions
@@ -89,6 +100,9 @@ export default function Home() {
     if (sectionFourRef.current){
       observer.observe(sectionFourRef.current);
     }
+    if (sectionFiveRef.current){
+      observer.observe(sectionFiveRef.current);
+    }
 
     // Cleanup observer on component unmount
     return () => {
@@ -106,6 +120,9 @@ export default function Home() {
       }
       if (sectionFourRef.current) {
         observer.unobserve(sectionFourRef.current);
+      }
+      if (sectionFourRef.current) {
+        observer.unobserve(sectionFiveRef.current);
       }
     };
   }, []);
@@ -174,7 +191,15 @@ export default function Home() {
                   <a onClick={scrollToSectionFour}>Story</a>
                 </div>
               </li>
-              <li><a href="">World</a></li>
+              <li>
+              <div className="World_text"
+                style={{
+                  transition: 'WebkitTextStroke 0.5s ease',
+                  WebkitTextStroke: isInViewSectionFive? "2px #000000" : "0px #000000"
+                }}>
+                  <a onClick={scrollToSectionFive}>World</a>
+                </div>
+              </li>
             </ul>
             <ul className="navbar_socials">
               {/* Twitter */}
@@ -272,6 +297,11 @@ export default function Home() {
         <div className="section4 position-absolute">
           <div className="SECTION4ANCHOR" ref={sectionFourRef}/>
           <StoryCarousel/>
+        </div>
+
+        <div className="section5 position-absolute">
+          <div className="SECTION5ANCHOR" ref={sectionFiveRef}/>
+          <WorldCarousel/>
         </div>
 
         {/* Scrollable website */}
