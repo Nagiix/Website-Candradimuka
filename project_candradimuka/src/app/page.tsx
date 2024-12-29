@@ -1,18 +1,21 @@
 'use client'
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
-import CharacterCarousel from "./scripts/carousel-1"
+import CharacterCarousel from "./scripts/carousel-character";
+import MechanicCarousel from "./scripts/carousel-mechanic";
 
 export default function Home() {
   const [isInViewSectionZero, setIsInViewSectionZero] = useState(false);
   const [isInViewSectionOne, setIsInViewSectionOne] = useState(false);
   const [isInViewSectionTwo, setIsInViewSectionTwo] = useState(false);
+  const [isInViewSectionThree, setIsInViewSectionThree] = useState(false);
 
 
   // Create refs for each section
   const sectionZeroRef = useRef<HTMLDivElement>(null);
   const sectionOneRef = useRef<HTMLDivElement>(null);
   const sectionTwoRef = useRef<HTMLDivElement>(null);
+  const sectionThreeRef = useRef<HTMLDivElement>(null);
   
   // Scroll to Section One
   const scrollToSectionOne = () => {
@@ -24,6 +27,13 @@ export default function Home() {
   
   const scrollToSectionTwo = () => {
     sectionTwoRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+  
+  const scrollToSectionThree = () => {
+    sectionThreeRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
@@ -44,6 +54,8 @@ export default function Home() {
           setIsInViewSectionOne(entry.isIntersecting);
         } else if (entry.target === sectionTwoRef.current) {
           setIsInViewSectionTwo(entry.isIntersecting);
+        } else if (entry.target === sectionThreeRef.current) {
+          setIsInViewSectionThree(entry.isIntersecting);
         }
       },
       observerOptions
@@ -59,6 +71,9 @@ export default function Home() {
     if (sectionTwoRef.current) {
       observer.observe(sectionTwoRef.current);
     }
+    if (sectionThreeRef.current){
+      observer.observe(sectionThreeRef.current);
+    }
 
     // Cleanup observer on component unmount
     return () => {
@@ -70,6 +85,9 @@ export default function Home() {
       }
       if (sectionTwoRef.current) {
         observer.unobserve(sectionTwoRef.current);
+      }
+      if (sectionThreeRef.current) {
+        observer.unobserve(sectionThreeRef.current);
       }
     };
   }, []);
@@ -120,7 +138,15 @@ export default function Home() {
                   <a onClick={scrollToSectionTwo}>Characters</a>
                 </div>
               </li>
-              <li><a href="">Mechanics</a></li>
+              <li>
+                <div className="Mechanic_text"
+                style={{
+                  transition: 'WebkitTextStroke 0.5s ease',
+                  WebkitTextStroke: isInViewSectionThree? "2px #000000" : "0px #000000"
+                }}
+                >
+                    <a onClick={scrollToSectionThree}>Mechanics</a></div>
+                </li>
               <li><a href="">Story</a></li>
               <li><a href="">World</a></li>
             </ul>
@@ -210,6 +236,11 @@ export default function Home() {
         <div className="section2" >
           <div className="SECTION2ANCHOR" ref={sectionTwoRef}/>
           <CharacterCarousel/>
+        </div>
+
+        <div className="section3 position-absolute">
+          <div className="SECTION3ANCHOR" ref={sectionThreeRef}/>
+          <MechanicCarousel/>
         </div>
 
         {/* Scrollable website */}

@@ -283,3 +283,16 @@ body {
   position:absolute;
   margin-top:25.5%;
 }
+
+/* section 3 */
+.section3{
+  left:0;
+  top:355vh;
+  z-index: 10;
+  height: 160vh;
+  width: 100vw;
+}
+.SECTION3ANCHOR{
+  position:absolute;
+  margin-top:25.7%;
+}
