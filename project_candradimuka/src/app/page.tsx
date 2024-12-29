@@ -1,92 +1,75 @@
 'use client'
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
-import PageCarousel from "./scripts/carousel-1";
+import CharacterCarousel from "./scripts/carousel-1"
 
 export default function Home() {
-  // OnClick scroll to section
-  const [isInView, setIsInView] = useState(false);
-  const sectionOneRef = useRef<HTMLDivElement>(null);  
-  const sectionZeroRef = useRef<HTMLDivElement>(null); 
-  const textRef_Characters = useRef<HTMLDivElement>(null); 
-  
-  const pages = [
-    <div
-      key="page1"
-      style={{
-        background: '#000000',
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
-      <h3>Page 1 Content</h3>
-      <p>This is the first page of the carousel.</p>
-    </div>,
-    <div
-      key="page2"
-      style={{
-        background: '#0f0f0f',
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
-      <h3>Page 2 Content</h3>
-      <p>This is the second page of the carousel.</p>
-    </div>,
-    <div
-      key="page3"
-      style={{
-        background: '#0a0a0a',
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
-      <h3>Page 3 Content</h3>
-      <p>This is the third page of the carousel.</p>
-    </div>,
-  ];
+  const [isInViewSectionZero, setIsInViewSectionZero] = useState(false);
+  const [isInViewSectionOne, setIsInViewSectionOne] = useState(false);
+  const [isInViewSectionTwo, setIsInViewSectionTwo] = useState(false);
 
-  // Scroll to Section one
+
+  // Create refs for each section
+  const sectionZeroRef = useRef<HTMLDivElement>(null);
+  const sectionOneRef = useRef<HTMLDivElement>(null);
+  const sectionTwoRef = useRef<HTMLDivElement>(null);
+  
+  // Scroll to Section One
   const scrollToSectionOne = () => {
     sectionOneRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
   };
+  
+  const scrollToSectionTwo = () => {
+    sectionTwoRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
 
-  //check view state of reader
+  // Check view state for multiple sections
   useEffect(() => {
+    const observerOptions = {
+      threshold: 0.5, // Trigger when 50% of the section is in view
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Check if the section is in view
-        if (entry.isIntersecting) {
-          setIsInView(true); // Apply bold when the section is in view
-        } else {
-          setIsInView(false); // Remove bold when the section is out of view
+        // Check if the section is in view and set the corresponding state
+        if (entry.target === sectionZeroRef.current) {
+          setIsInViewSectionZero(entry.isIntersecting);
+        } else if (entry.target === sectionOneRef.current) {
+          setIsInViewSectionOne(entry.isIntersecting);
+        } else if (entry.target === sectionTwoRef.current) {
+          setIsInViewSectionTwo(entry.isIntersecting);
         }
       },
-      {
-        threshold: 0.5, // Trigger when 50% of the section is in view
-      }
+      observerOptions
     );
+
+    // Observe each section
+    if (sectionZeroRef.current) {
+      observer.observe(sectionZeroRef.current);
+    }
     if (sectionOneRef.current) {
       observer.observe(sectionOneRef.current);
     }
+    if (sectionTwoRef.current) {
+      observer.observe(sectionTwoRef.current);
+    }
+
+    // Cleanup observer on component unmount
     return () => {
+      if (sectionZeroRef.current) {
+        observer.unobserve(sectionZeroRef.current);
+      }
       if (sectionOneRef.current) {
         observer.unobserve(sectionOneRef.current);
+      }
+      if (sectionTwoRef.current) {
+        observer.unobserve(sectionTwoRef.current);
       }
     };
   }, []);
@@ -108,7 +91,13 @@ export default function Home() {
           
         {/* Navbar */}
         <div className="navbar">
-          <div className="navbarbox"></div>
+          <div className="navbarbox" 
+            style={{
+              transition: 'opacity 1s ease, mix-blend-mode 0.5s ease',
+              opacity: isInViewSectionZero ? 0.8 : 1,
+              mixBlendMode: isInViewSectionZero? "lighten" : "normal"
+            }}
+          ></div>
           <div className="navbar-content">
             <Image
               className="Language"
@@ -122,12 +111,13 @@ export default function Home() {
             </div>
             <ul className="navbar_links">
               <li>
-                <div className="Character_text" ref={textRef_Characters}
+                <div className="Character_text"
                 style={{
-                  WebkitTextStroke: isInView? "2px #000000" : "0px #000000"
+                  transition: 'WebkitTextStroke 0.5s ease',
+                  WebkitTextStroke: isInViewSectionTwo? "2px #000000" : "0px #000000"
                 }}
                 >
-                  <a onClick={scrollToSectionOne}>Characters</a>
+                  <a onClick={scrollToSectionTwo}>Characters</a>
                 </div>
               </li>
               <li><a href="">Mechanics</a></li>
@@ -217,12 +207,9 @@ export default function Home() {
         </div>
 
         {/* section 2 */}
-        <div className="section2">
-          <div className="s2_contents">
-            <div className="Carousel-1">
-              <PageCarousel pages={pages} />
-            </div>
-          </div>
+        <div className="section2" >
+          <div className="SECTION2ANCHOR" ref={sectionTwoRef}/>
+          <CharacterCarousel/>
         </div>
 
         {/* Scrollable website */}
