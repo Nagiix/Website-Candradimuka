@@ -9,7 +9,7 @@ const MechanicCarousel = () => {
   };
 
   const pages = [
-    // GROUP
+    // TITLE
     <div key="0" className="flex items-center justify-center w-full h-full">
       <p className="mt-4 text-[#000000] position-absolute"
         style={{

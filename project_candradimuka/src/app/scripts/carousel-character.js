@@ -338,7 +338,7 @@ const CharacterCarousel = () => {
       interval={50000}
       >
       {pages.map((page, idx) => (
-        <Carousel.Item key={idx}>
+        <Carousel.Item key={idx} interval={null}>
           <div
             className="d-flex justify-content-center align-items-center"
             style={{ height: '154vh', width: "100vw"}}

@@ -244,6 +244,12 @@ body {
   top: 250%;
 }
 
+.SECTION2ANCHOR{
+  position:absolute;
+  margin-top:25.5%;
+}
+
+/* Carousel */
 .carousel-control-prev {
   width: 50px; /* Adjust the width of the control area */
   left: 10px;  /* Adjust the left positioning of the previous arrow */
@@ -279,11 +285,6 @@ body {
   bottom:90%;
 }
 
-.SECTION2ANCHOR{
-  position:absolute;
-  margin-top:25.5%;
-}
-
 /* section 3 */
 .section3{
   left:0;
@@ -293,6 +294,19 @@ body {
   width: 100vw;
 }
 .SECTION3ANCHOR{
+  position:absolute;
+  margin-top:25.7%;
+}
+
+/* section 4 */
+.section4{
+  left:0;
+  top:445vh;
+  z-index: 10;
+  height: 160vh;
+  width: 100vw;
+}
+.SECTION4ANCHOR{
   position:absolute;
   margin-top:25.7%;
 }
