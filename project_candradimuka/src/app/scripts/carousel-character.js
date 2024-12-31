@@ -1,11 +1,19 @@
+
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
 
 const CharacterCarousel = () => {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
+  };
+
+  const router = useRouter();
+
+  const handleRedirect = (slug) => {
+    router.push(`/charpages/${slug}`);
   };
 
   const pages = [
@@ -80,12 +88,14 @@ const CharacterCarousel = () => {
         className="position-absolute w-[37%] h-[15%] ml-[56%] mb-[45%]" style={{
       }}/>
       <h1 className="position-absolute ml-[61%] mt-[11%]"
+          onClick={()=> handleRedirect("Semar")}
           style={{
             fontFamily:"Island Moments",
             opacity:0.7,
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
+            cursor: "pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -151,12 +161,14 @@ const CharacterCarousel = () => {
         className="position-absolute w-[37%] h-[8%] ml-[56%] mb-[50%]" style={{
       }}/>
       <h1 className="position-absolute ml-[61%] mt-[11%]"
+          onClick={()=> handleRedirect("Gareng")}
           style={{
             fontFamily:"Island Moments",
             opacity:0.7,
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
+            cursor:"pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -222,12 +234,14 @@ const CharacterCarousel = () => {
         className="position-absolute w-[37%] h-[8%] ml-[56%] mb-[50%]" style={{
       }}/>
       <h1 className="position-absolute ml-[61%] mt-[11%]"
+          onClick={()=> handleRedirect("Petruk")}
           style={{
             fontFamily:"Island Moments",
             opacity:0.7,
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
+            cursor:"pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -295,12 +309,14 @@ const CharacterCarousel = () => {
         className="position-absolute w-[37%] h-[8%] ml-[56%] mb-[50%]" style={{
       }}/>
       <h1 className="position-absolute ml-[61%] mt-[11%]"
+          onClick={()=> handleRedirect("Bagong")}
           style={{
             fontFamily:"Island Moments",
             opacity:0.7,
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
+            cursor:"pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
