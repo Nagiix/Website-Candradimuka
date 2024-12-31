@@ -121,7 +121,7 @@ export default function Home() {
       if (sectionFourRef.current) {
         observer.unobserve(sectionFourRef.current);
       }
-      if (sectionFourRef.current) {
+      if (sectionFiveRef.current) {
         observer.unobserve(sectionFiveRef.current);
       }
     };
