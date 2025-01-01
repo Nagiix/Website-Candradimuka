@@ -22,6 +22,13 @@ export default function Home() {
   const sectionFourRef = useRef<HTMLDivElement>(null);
   const sectionFiveRef = useRef<HTMLDivElement>(null);
 
+  // Scroll to Section Zero
+  const scrollToSectionZero = () => {
+    sectionZeroRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
   // Scroll to Section One
   const scrollToSectionOne = () => {
     sectionOneRef.current?.scrollIntoView({
@@ -155,7 +162,9 @@ export default function Home() {
               width={48}
               height={48}
             />
-            <div className="title">
+            <div className="title"
+              onClick={scrollToSectionZero}
+            >
               <h1>Project Candradimuka</h1>
             </div>
             <ul className="navbar_links">
