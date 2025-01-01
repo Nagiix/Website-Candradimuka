@@ -25,7 +25,7 @@ export default function CharPages({ params }: { params: Promise<{ id: string }> 
             <div className="title"
             onClick={handleBackToMain} 
             style={{
-              cursor: "pointer"
+              cursor: "url('/res_img/cursors/select.cur'), pointer"
             }}
             >
               <h1>Project Candradimuka</h1>
@@ -82,7 +82,7 @@ export default function CharPages({ params }: { params: Promise<{ id: string }> 
       <div className="title"
       onClick={handleBackToMain} 
       style={{
-        cursor: "pointer"
+        cursor: "url('/res_img/cursors/select.cur'), pointer"      
       }}
       >
         <h1>Project Candradimuka</h1>
@@ -139,7 +139,7 @@ export default function CharPages({ params }: { params: Promise<{ id: string }> 
       <div className="title"
       onClick={handleBackToMain} 
       style={{
-        cursor: "pointer"
+        cursor: "url('/res_img/cursors/select.cur'), pointer"
       }}
       >
         <h1>Project Candradimuka</h1>
@@ -196,7 +196,7 @@ export default function CharPages({ params }: { params: Promise<{ id: string }> 
       <div className="title"
       onClick={handleBackToMain} 
       style={{
-        cursor: "pointer"
+        cursor: "url('/res_img/cursors/select.cur'), pointer"      
       }}
       >
         <h1>Project Candradimuka</h1>

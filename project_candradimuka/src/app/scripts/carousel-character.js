@@ -95,7 +95,7 @@ const CharacterCarousel = () => {
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
-            cursor: "pointer"
+            cursor:"url('/res_img/cursors/select.cur'), pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -168,7 +168,7 @@ const CharacterCarousel = () => {
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
-            cursor:"pointer"
+            cursor:"url('/res_img/cursors/select.cur'), pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -241,7 +241,7 @@ const CharacterCarousel = () => {
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
-            cursor:"pointer"
+            cursor:"url('/res_img/cursors/select.cur'), pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
@@ -316,7 +316,7 @@ const CharacterCarousel = () => {
             fontSize:100,
             color: "black",
             WebkitTextStroke: "2px black",
-            cursor:"pointer"
+            cursor:"url('/res_img/cursors/select.cur'), pointer"
           }}
       >DEEP DIVE!</h1>
       <h2 className="position-absolute quality-[100] ml-[56.5%] mb-[25%] pr-[7%]"
