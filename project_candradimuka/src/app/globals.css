@@ -21,6 +21,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: url('/res_img/cursors/normal.cur'), default;
 }
 
 .Background_image{
@@ -411,4 +412,4 @@ body {
   font-family: "Inria Serif";
   font-size: 15;
   left:1.5%;
-}
+} 
