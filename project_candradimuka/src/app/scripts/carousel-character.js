@@ -329,7 +329,7 @@ const CharacterCarousel = () => {
       >
         A [Punakawan] whose main trait is his good heart but is also always in a hurry to do anything, he is usually used as a bad example.<br/><br/>
 
-        Bagong is born from Semar's shadow, therefore they are quite similar in appearance
+        Bagong is born from Semar's shadow, therefore they are quite similar in appearance.
       </h2>
       <h1 className="position-absolute ml-[72%] mb-[60%]"
           style={{

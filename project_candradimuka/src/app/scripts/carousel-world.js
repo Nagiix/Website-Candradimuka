@@ -11,17 +11,18 @@ const WorldCarousel = () => {
   const pages = [
     // GROUP
     <div key="0" className="flex items-center justify-center w-full h-full">
-      <p className="mt-4 text-[#000000] position-absolute"
+      <p className="mt-4 text-[#000000] position-absolute w-[100%]"
         style={{
+          left:"35%",
           top:"19%",
           fontFamily:"Island Moments",
           WebkitTextStroke:"2px #000000",
           fontSize:250
         }}
       >World</p>
-      <p className="mt-4 text-[#000000] position-absolute"
+      <p className="mt-4 text-[#000000] position-absolute w-[100%]"
         style={{
-          paddingLeft:"1%",
+          paddingLeft:"36%",
           top:"20.5%",
           fontFamily:"Island Moments",
           WebkitTextStroke:"2px #000000",

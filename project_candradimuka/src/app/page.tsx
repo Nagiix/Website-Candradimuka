@@ -132,15 +132,11 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         {/* Background - Landing*/}
-        <div className="Background_image" ref={sectionZeroRef}>
-          {/* <Image
-            src="/res_img/bg_main_resized.png"
-            alt="test"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          /> */}
-        </div>
+        <div className="Background_image" ref={sectionZeroRef}/>
+        <img
+          className="w-[36%] z-1 position-absolute ml-[20%] mt-[-10%]"
+          src="/res_img/landing_title.png"
+        />
           
         {/* Navbar */}
         <div className="navbar">
